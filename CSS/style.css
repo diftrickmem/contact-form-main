@@ -1,0 +1,215 @@
+@font-face {
+    font-family: "Karla", sans-serif;
+    src: url("../assets/fonts/Karla-VariableFont_wght.ttf format") ("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: hsl(148, 38%, 91%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+main {
+    width: 100vw;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.75em;
+}
+
+label {
+    font-size: 0.75em;
+}
+
+.form-card {
+    min-width: 20em;
+    max-width: 48em;
+    background-color: #fff;
+    padding: 2em;
+    border-radius: 1em;
+    font-family: "Karla", sans-serif;
+    font-size: 1em;
+    color: hsl(187, 24%, 22%);
+}
+
+.form-card__title {
+    margin-bottom: 0.5em;
+}
+
+.form-card__form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75em;
+}
+
+.form-card__name {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.form-card__input-block {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5em;
+}
+
+.form-card__input {
+    font-size: 1em;
+    height: 2em;
+    border-radius: 0.5em;
+    border: 1px solid hsl(186, 15%, 59%);
+    padding-left: 1em;
+    outline: none;
+}
+
+.form-card__input:focus{
+    border: 1px solid hsl(169, 82%, 27%);
+}
+
+.form-card__query-type {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.form-card__query-option {
+    height: 3em;
+    border: 1px solid hsl(186, 15%, 59%);
+    border-radius: 0.5em;
+    display: flex;
+    flex-direction: row;
+    padding-left: 1em;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.form-card__message {
+    min-height: 15em;
+    border: 1px solid hsl(186, 15%, 59%);
+    border-radius: 0.5em;
+    padding-left: 1em;
+    outline: none;
+}
+.form-card__message:focus{
+    border: 1px solid hsl(169, 82%, 27%);
+}
+
+.form-card__checkbox {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+
+.form-card__submit-btn {
+    height: 2.5em;
+    border-radius: 0.5em;
+    border: none;
+    background-color: hsl(169, 82%, 27%);
+    color: #fff;
+    font-size: 1em;
+}
+
+@media (min-width: 48em) {
+    .form-card {
+        width: auto;
+    }
+
+    .form-card__form {
+        gap: 1em;
+    }
+
+    .form-card__name {
+        flex-direction: row;
+        gap: 1em;
+    }
+
+    .form-card__query-type {
+        flex-direction: row;
+    }
+
+    .form-card__query-option {
+        width: 50%;
+    }
+
+    .form-card__message {
+        min-height: 5em;
+    }
+}
+
+
+
+.toast {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100px); /* Початково сховано зверху */
+    background-color: hsl(187, 24%, 22%); /* Темний колір як у макеті */
+    color: white;
+    padding: 20px 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    z-index: 1000;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Плавний "стрибок" */
+    opacity: 0;
+}
+
+/* Клас, який ми додаватимемо через JS */
+.toast.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+
+.toast-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.toast-content h3 {
+    margin: 0 0 5px 0;
+    font-size: 18px;
+}
+
+.toast-content p {
+    margin: 0;
+    font-size: 14px;
+    color: hsl(186, 15%, 59%);
+}
+
+.hidden {
+    display: none;
+}
+
+.error-message {
+    color: hsl(0, 66%, 54%);
+    font-size: 0.75rem;
+    margin-top: -0.25rem;
+    /* Щоб наблизити до інпуту */
+}
+
+/* Стиль для активного стану радіо-кнопок */
+.form-card__query-option:has(input:checked) {
+    background-color: hsl(148, 38%, 91%);
+    border: 1px solid hsl(169, 82%, 27%);
+    accent-color: hsl(169, 82%, 27%);
+}
+
+
+.form-card__checkbox-button[type="checkbox"]:checked {
+    accent-color: hsl(169, 82%, 27%);
+}
