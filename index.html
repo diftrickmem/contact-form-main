@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Contact form</title>
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <script defer src="./Scripts/main.js"></script>
+  </head>
+  <body>
+    <main>
+      <section class="form-card">
+        <h1 class="form-card__title">Contact Us</h1>
+
+        <form class="form-card__form" novalidate>
+          <div class="form-card__name">
+            <div class="form-card__input-block">
+              <label for="fname">First Name *</label>
+              <input
+                class="form-card__input name"
+                id="fname"
+                type="text"
+                name="first_name"
+                required
+              />
+              <span class="error-message hidden">This field is required</span>
+            </div>
+
+            <div class="form-card__input-block">
+              <label for="lname">Last Name *</label>
+              <input
+                class="form-card__input name"
+                id="lname"
+                type="text"
+                name="last_name"
+                required
+              />
+              <span class="error-message hidden">This field is required</span>
+            </div>
+          </div>
+
+          <div class="form-card__input-block">
+            <label for="email">Email Address *</label>
+            <input
+              class="form-card__input"
+              id="email"
+              type="email"
+              name="email"
+              required
+            />
+            <span class="error-message hidden"
+              >Please enter a valid email address</span
+            >
+          </div>
+
+          <div class="form-card__input-block">
+            <label>Query Type *</label>
+            <div class="form-card__query-type">
+              <label class="form-card__query-option">
+                <input
+                  class="form-card__radio"
+                  type="radio"
+                  name="query"
+                  value="general"
+                  required
+                />
+                General Enquiry
+              </label>
+              <label class="form-card__query-option">
+                <input
+                  class="form-card__radio"
+                  type="radio"
+                  name="query"
+                  value="support"
+                />
+                Support Request
+              </label>
+            </div>
+            <span class="error-message hidden">Please select a query type</span>
+          </div>
+
+          <div class="form-card__input-block">
+            <label for="message">Message *</label>
+            <textarea
+              class="form-card__message"
+              name="message"
+              id="message"
+              required
+            ></textarea>
+            <span class="error-message hidden">This field is required</span>
+          </div>
+
+          <div class="form-card__input-block">
+            <div class="form-card__checkbox">
+              <input
+                class="form-card__checkbox-button"
+                id="contacted"
+                type="checkbox"
+                name="consent"
+                required
+              />
+              <label for="contacted"
+                >I consent to being contacted by the team *</label
+              >
+            </div>
+            <span class="error-message hidden"
+              >To submit this form, please consent to being contacted</span
+            >
+          </div>
+
+          <button type="submit" class="form-card__submit-btn">Submit</button>
+        </form>
+      </section>
+    </main>
+
+    <div id="success-toast" class="toast hidden">
+      <div class="toast-content">
+        <img src="./assets/images/icon-success-check.svg" alt="Success" />
+        <div>
+          <h3>Message Sent!</h3>
+          <p>Thanks for completing the form. We'll be in touch soon!</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="attribution">
+      Challenge by
+      <a target="_blank" href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a target="_blank" href="https://github.com/diftrickmem">diftrickmem</a>.
+    </div>
+  </body>
+</html>
